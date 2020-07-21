@@ -1,9 +1,14 @@
+const dotenv = require('dotenv')
 const express = require('express')
 const bodyParser = require('body-parser')
 const { graphqlHTTP } = require('express-graphql')
 const { buildSchema } = require('graphql')
 
+const connectDB = require('./config/db')
+
 const app = express()
+
+connectDB()
 
 app.use(bodyParser.json())
 
